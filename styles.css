@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+}
+
+.profile {
+  position: relative;
+  width: 150px;
+  height: 400px;
+  margin: 0 .2rem;
+  overflow: hidden;
+  border-radius: 7px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.profile img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  left: 30%;
+  padding: 0 1rem;
+  transform: rotate(-90deg);
+  transform-origin: left center;
+  bottom: 0;
+  color: #fff;
+  font-family: arial, sans-serif;
+  transition: .3s;
+}
+
+.text p {
+  font-size: .8rem;
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1))
+}
+
+.profile:hover {
+  width: 250px;
+}
+.profile:hover .text {
+  left: 0;
+  bottom: 5%;
+  transform: rotate(0);
+}
